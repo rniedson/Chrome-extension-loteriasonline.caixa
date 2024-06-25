@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Aposte Fácil nas Loterias Caixa ",
+  "version": "1.8",
+  "description": "Economize tempo e esforço! Faça jogos da Mega-Sena, Lotofácil, Quina, Lotomania e Timemania com apenas um clique.",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.loteriasonline.caixa.gov.br/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "host_permissions": [
+    "https://www.loteriasonline.caixa.gov.br/*"
+  ]
+}
